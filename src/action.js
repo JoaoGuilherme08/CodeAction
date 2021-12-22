@@ -20,17 +20,17 @@ async function run() {
         const url = `https://api.tenor.com/v1/search?q=recusado&pos=${randomPos}&limit=1&media_filter=minimal&contentfilter=high&key=${TENOR_TOKEN}`;
         const response = await fetch(url);
         results = await response.json();
+        gifUrl = results['results'][0]['media'][0]['tinygif']['url'];
       }while(results['next'] === "0" );
 
-      gifUrl = results['results'][0]['media'][0]['tinygif']['url'];
     }else if(pull_request.action == "opened"){
       do{
         const randomPos = Math.round(Math.random() * 10);
         const url = `https://api.tenor.com/v1/search?q=tamo%20junto&pos=${randomPos}&limit=1&media_filter=minimal&contentfilter=high&key=${TENOR_TOKEN}`;
         const response = await fetch(url);
         results = await response.json();
+        gifUrl = results['results'][0]['media'][0]['tinygif']['url'];
       }while(results['next'] === "0" );
-      gifUrl = results['results'][0]['media'][0]['tinygif']['url'];
     }
 
     await octokit.rest.issues.createComment({
