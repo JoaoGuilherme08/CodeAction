@@ -21,7 +21,8 @@
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
     "@vercel/ncc": "^0.33.1",
-    "node-fetch": "3.0"
+    "node-fetch": "3.0",
+    "whatwg-fetch": "^3.6.2"
   },
   "devDependencies": {
     "xhr2": "^0.2.1"
