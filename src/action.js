@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const fetch = require('whatwg-fetch');
+const fetch = require('node-fetch');
 
 async function run() {
     const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
