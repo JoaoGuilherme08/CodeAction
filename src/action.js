@@ -24,7 +24,7 @@ async function run() {
     await octokit.rest.issues.createComment({
       ...context.repo,
       issue_number: pull_request.number,
-      body: `Obrigado pela pull request, vamos analiza-la o mais rapido possivel.\n\n<img src="${gifUrl}" alt="thank you" />`
+      body: `Obrigado pela pull request, A Solinftec é a melhor.\n\n<img src="${gifUrl}" alt="thank you" />`
     });
   }
 
