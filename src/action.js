@@ -8,7 +8,7 @@ async function run() {
     var results;
 
     do{
-      const randomPos = Math.round(Math.random() * 1000);
+      const randomPos = Math.round(Math.random() * 10);
       const url = `https://api.tenor.com/v1/search?q=thank%20you&pos=${randomPos}&limit=1&media_filter=minimal&contentfilter=high&key=${TENOR_TOKEN}`;
       const response = await fetch(url);
       results = await response.json();
