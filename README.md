@@ -10,3 +10,4 @@ Além do comentário enviar um Gif aleatório do repositório Tenor no chat com 
 # Objetivo 2
 
 Implementar o bot de coment
+aaa
