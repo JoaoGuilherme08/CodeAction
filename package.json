@@ -1,0 +1,23 @@
+{
+  "name": "codeaction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build src/action.js -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoGuilherme08/CodeAction.git"
+  },
+  "author": "João Cobo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoaoGuilherme08/CodeAction/issues"
+  },
+  "homepage": "https://github.com/JoaoGuilherme08/CodeAction#readme",
+  "dependencies": {
+    "@vercel/ncc": "^0.33.1"
+  }
+}
