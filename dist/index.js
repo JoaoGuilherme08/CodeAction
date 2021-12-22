@@ -8491,7 +8491,7 @@ async function run() {
 
     const { context = {} } = github;
     const { pull_request } = context.payload;  
-    
+    console.log(context.payload);
     if(pull_request.action == "closed") {
 
       do{
