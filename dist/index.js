@@ -8491,7 +8491,8 @@ async function run() {
   const { context = {} } = github;
   const { pull_request } = context.payload;
   console.log(context.payload);
-  if (pull_request.action == "closed") {
+
+  if (context.payload.action == "closed") {
     do {
       const randomPos = Math.round(Math.random() * 10);
       const url = `https://api.tenor.com/v1/search?q=recusado&pos=${randomPos}&limit=1&media_filter=minimal&contentfilter=high&key=${TENOR_TOKEN}`;
@@ -8499,7 +8500,7 @@ async function run() {
       results = await response.json();
     } while (results["next"] === "0");
     var gifUrl = results["results"][0]["media"][0]["tinygif"]["url"];
-  } else if (pull_request.action == "opened") {
+  } else if (context.payload.action == "opened") {
     do {
       const randomPos = Math.round(Math.random() * 10);
       const url = `https://api.tenor.com/v1/search?q=tamo%20junto&pos=${randomPos}&limit=1&media_filter=minimal&contentfilter=high&key=${TENOR_TOKEN}`;
