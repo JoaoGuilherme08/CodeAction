@@ -16,11 +16,15 @@ async function run() {
   if (context.payload.action == "closed") {
     do {
       const randomPos = Math.round(Math.random() * 10);
-      const url = `https://api.tenor.com/v1/search?q=recusado&pos=${randomPos}&limit=1&media_filter=minimal&contentfilter=high&key=${TENOR_TOKEN}`;
+      const url = `https://api.tenor.com/v1/search?q=refused&pos=${randomPos}&limit=1&media_filter=minimal&contentfilter=high&key=${TENOR_TOKEN}`;
       const response = await fetch(url);
       results = await response.json();
     } while (results["next"] === "0");
     var gifUrl = results["results"][0]["media"][0]["tinygif"]["url"];
+    var mensagem =
+      "Sua pull foi recusada, mas não desista!, A Solinftec é a melhor.\n\n<img src=" +
+      gifUrl +
+      " alt='thank you' />";
   } else if (context.payload.action == "opened") {
     do {
       const randomPos = Math.round(Math.random() * 10);
@@ -29,12 +33,16 @@ async function run() {
       results = await response.json();
     } while (results["next"] === "0");
     var gifUrl = results["results"][0]["media"][0]["tinygif"]["url"];
+    var mensagem =
+      "Obrigado pela pull request, A Solinftec é a melhor.\n\n<img src=" +
+      gifUrl +
+      " alt='thank you' />";
   }
 
   await octokit.rest.issues.createComment({
     ...context.repo,
     issue_number: pull_request.number,
-    body: `Obrigado pela pull request, A Solinftec é a melhor.\n\n<img src="${gifUrl}" alt="thank you" />`,
+    body: mensagem,
   });
 }
 
